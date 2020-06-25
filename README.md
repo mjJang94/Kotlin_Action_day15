@@ -3,7 +3,6 @@
 val getAge = Person::age
 ::를 사용하는 식을 멤버 참조라고 하는데 이는 프로퍼티나 메소드를 단 하나만 호출하는 함수 값을 만들어준다.   
 사실 Person::age는 val getAge = { perosn: Person -> person.age }를 더 간략하게 표현한 형태이다. 표현의 형태는 여러가지가 있다.
-
 <code>
 <pre>
 people.maxBy(Person::age)
@@ -13,11 +12,9 @@ people.maxBy( it.age )
 </pre>
 
 최상위에 선언된 함수나 프로퍼티를 참조할 수도 있다.
-
 <code>
 <pre>
 fun salute() = println("Salute!")
-
 >>> run(::salute)
 </code>
 </pre>
@@ -25,7 +22,6 @@ fun salute() = println("Salute!")
 위 코드에서 run은 라이브러리 함수이다.
 
 람다가 인자가 여럿인 다른 함수한테 작업을 위임하는 경우 람다를 정의하지 않고 직접 위임 함수에 대한 참조를 제공하면 편리하다.
-
 <code>
 <pre>
 val action = { person: Person, message: String -> //----- sendEmail에게 작업을 위임
